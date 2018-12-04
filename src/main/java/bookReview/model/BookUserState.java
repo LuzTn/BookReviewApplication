@@ -9,8 +9,10 @@ public class BookUserState {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
     @ManyToOne
     private User user;
+
     @ManyToOne
     private Book book;
 
