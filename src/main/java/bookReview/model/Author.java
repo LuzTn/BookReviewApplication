@@ -17,15 +17,6 @@ public class Author {
     @OneToMany
     private Set<Book> writtenBooks;
 
-    @OneToMany
-    private Set<Book> booksToRead;
-
-    @OneToMany
-    private Set<Book> currentlyReading;
-
-    @OneToMany
-    private Set<Book> ReadBooks;
-
     public Integer getId() {
         return id;
     }
@@ -64,30 +55,6 @@ public class Author {
 
     public void setWrittenBooks(Set<Book> writtenBooks) {
         this.writtenBooks = writtenBooks;
-    }
-
-    public Set<Book> getBooksToRead() {
-        return booksToRead;
-    }
-
-    public void setBooksToRead(Set<Book> booksToRead) {
-        this.booksToRead = booksToRead;
-    }
-
-    public Set<Book> getCurrentlyReading() {
-        return currentlyReading;
-    }
-
-    public void setCurrentlyReading(Set<Book> currentlyReading) {
-        this.currentlyReading = currentlyReading;
-    }
-
-    public Set<Book> getReadBooks() {
-        return ReadBooks;
-    }
-
-    public void setReadBooks(Set<Book> readBooks) {
-        ReadBooks = readBooks;
     }
 
 }

@@ -27,6 +27,9 @@ public class Book {
     @ManyToMany
     private Set<User> readers;
 
+    @OneToMany
+    private List<BookUserState> bookUserStateList;
+
 
     public Integer getId() {
         return id;
@@ -90,5 +93,13 @@ public class Book {
 
     public void setReviews(List<Reviews> reviews) {
         this.reviews = reviews;
+    }
+
+    public List<BookUserState> getBookUserStateList() {
+        return bookUserStateList;
+    }
+
+    public void setBookUserStateList(List<BookUserState> bookUserStateList) {
+        this.bookUserStateList = bookUserStateList;
     }
 }

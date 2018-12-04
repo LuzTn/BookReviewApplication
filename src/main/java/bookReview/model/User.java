@@ -17,14 +17,8 @@ public class User {
 
     private String password;
 
-    @ManyToMany
-    private Set<Book> booksToRead;
-
-    @ManyToMany
-    private Set<Book> currentlyReading;
-
-    @ManyToMany
-    private Set<Book> ReadBooks;
+    @OneToMany
+    private List<BookUserState> books;
 
     @OneToMany
     private List<Reviews> comments;
@@ -61,36 +55,20 @@ public class User {
         this.password = password;
     }
 
-    public Set<Book> getBooksToRead() {
-        return booksToRead;
-    }
-
-    public void setBooksToRead(Set<Book> booksToRead) {
-        this.booksToRead = booksToRead;
-    }
-
-    public Set<Book> getCurrentlyReading() {
-        return currentlyReading;
-    }
-
-    public void setCurrentlyReading(Set<Book> currentlyReading) {
-        this.currentlyReading = currentlyReading;
-    }
-
-    public Set<Book> getReadBooks() {
-        return ReadBooks;
-    }
-
-    public void setReadBooks(Set<Book> readBooks) {
-        ReadBooks = readBooks;
-    }
-
     public List<Reviews> getComments() {
         return comments;
     }
 
     public void setComments(List<Reviews> comments) {
         this.comments = comments;
+    }
+
+    public List<BookUserState> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<BookUserState> books) {
+        this.books = books;
     }
 
 }
