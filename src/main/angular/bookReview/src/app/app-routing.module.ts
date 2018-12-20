@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UsersComponent} from "./users/users.component";
+import {BooksComponent} from "./books/books.component";
+import {AddBooksComponent} from "./add-books/add-books.component";
+import {ProfilesComponent} from "./profiles/profiles.component";
+import {HomeComponent} from "./home/home.component";
+import {AuthenticationComponent} from "./authentication/authentication.component";
 
 const routes: Routes = [
-    {path: '', redirectTo: '/users', pathMatch: 'full'
+    {path: '', redirectTo: '/authentication', pathMatch: 'full'
     },{
-        path: 'users',
-        component: UsersComponent
+        path: 'authentication',
+        component: AuthenticationComponent
+    },{
+        path: 'home',
+        component: HomeComponent
+    }, {
+    path: 'books', component: BooksComponent
+    }, {
+    path: 'addbooks', component: AddBooksComponent
+    }, {
+    path: 'profile/:userId', component: ProfilesComponent
     }
 ];
 

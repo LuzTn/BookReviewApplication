@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User} from "./users.model";
+import {User} from "../profiles/user.model";
 
 
 const httpOptions = {
@@ -13,7 +13,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class UsersService {
+export class HomeService {
     private userUrl = 'http://localhost:8080/bookReview/';
 
     constructor(private http: HttpClient) {
@@ -24,7 +24,10 @@ export class UsersService {
     }
 
     public postUsers(name, email, password): Observable<User> {
-
-        return this.http.post<User>(this.userUrl + 'add', {"name": name, "email": email, "password":password}, httpOptions);
+        return this.http.post<User>(this.userUrl + 'add', {
+            "name": name,
+            "email": email,
+            "password": password
+        }, httpOptions);
     }
-    }
+}
