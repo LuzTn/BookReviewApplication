@@ -12,8 +12,6 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { AddBooksComponent } from './add-books/add-books.component';
 import {HomeComponent} from "./home/home.component";
 import {HomeService} from "./home/home.service";
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
@@ -23,8 +21,6 @@ import { AuthenticationComponent } from './authentication/authentication.compone
         BooksComponent,
         ProfilesComponent,
         AddBooksComponent,
-        SignUpComponent,
-        SignInComponent,
         AuthenticationComponent
     ],
     imports: [
