@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../profiles/user.model";
-import {HomeService} from "../home/home.service";
 import {FormControl, Validators} from "@angular/forms";
+import {AuthenticationService} from "./authentication.service";
 
 @Component({
   selector: 'app-authentication',
@@ -14,11 +14,11 @@ export class AuthenticationComponent implements OnInit {
     user: User = new User();
     signUp: boolean = false;
     signIn: boolean = true;
-    constructor(private homeService: HomeService) {
+    constructor(private authenticationService: AuthenticationService) {
 
     }
     ngOnInit() {
-        this.homeService.getUsers()
+        this.authenticationService.getUsers()
             .subscribe( data => {
                 this.users = data;
             });
@@ -41,8 +41,9 @@ export class AuthenticationComponent implements OnInit {
         console.log(this.user.name);
         console.log(this.user.email);
         console.log(this.user.password);
-        this.homeService.postUsers(this.user.name, this.user.email, this.user.password) .subscribe( data => {
+        this.authenticationService.postUsers(this.user.name, this.user.email, this.user.password) .subscribe( data => {
             console.log("User created successfully.", data);
         });
+        this.toggleSign();
     }
 }

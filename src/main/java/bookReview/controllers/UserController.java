@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping(path = "/bookReview", method = {RequestMethod.GET, RequestMethod.POST})
+@RequestMapping(path = "/bookReview/users", method = {RequestMethod.GET, RequestMethod.POST})
 public class UserController {
     @Autowired
     private UsersService usersService;

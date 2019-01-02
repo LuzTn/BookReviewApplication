@@ -17,6 +17,8 @@ public class Author {
     @OneToMany
     private Set<Book> writtenBooks;
 
+    // ------------------------------------------------------------------------------------------------------
+
     public Integer getId() {
         return id;
     }

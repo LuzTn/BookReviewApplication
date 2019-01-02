@@ -11,8 +11,9 @@ import { BooksComponent } from './books/books.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { AddBooksComponent } from './add-books/add-books.component';
 import {HomeComponent} from "./home/home.component";
-import {HomeService} from "./home/home.service";
 import { AuthenticationComponent } from './authentication/authentication.component';
+import {AuthenticationService} from "./authentication/authentication.service";
+import {BooksService} from "./books/books.service";
 
 @NgModule({
     declarations: [
@@ -33,7 +34,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
         ReactiveFormsModule,
         MatButtonModule
     ],
-    providers: [AppService, HomeService],
+    providers: [AppService, AuthenticationService, BooksService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,7 @@
 package bookReview.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -13,8 +15,8 @@ public class Book {
     private Integer id;
     private String title;
 
-    @ManyToMany
-    private Set<Author> author;
+    @ManyToOne
+    private Author author;
 
     @OneToMany
     private Set<Quotes> quotes;
@@ -47,11 +49,13 @@ public class Book {
         this.title = title;
     }
 
-    public Set<Author> getAuthor() {
+    @JsonIgnore
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(Set<Author> author) {
+    @JsonIgnore
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
